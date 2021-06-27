@@ -50,6 +50,7 @@ public class PyramidCSVDAO extends Thread implements PyramidDAO {
             public int compare(Pyramid o1, Pyramid o2) {
                 return (int) (o1.getHeight() - o2.getHeight()); }});
         return pyramids;*/
+        // Using Stream and sorted with comparator with a reference method argument.
         List <Pyramid> sortedPyramids;
         sortedPyramids=pyramids.stream().sorted(Comparator.comparing(Pyramid::getHeight)).collect(Collectors.toList());
         return sortedPyramids;
