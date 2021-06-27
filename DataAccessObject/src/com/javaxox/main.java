@@ -2,7 +2,7 @@ package com.javaxox;
 import java.io.IOException;
 import java.util.*;
 
-public class main {
+public class Main {
     public static void main(String[] args) throws IOException {
 
         //creating a list of pyramid objects .

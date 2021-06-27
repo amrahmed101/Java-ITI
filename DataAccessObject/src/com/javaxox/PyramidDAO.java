@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 public interface PyramidDAO {
-    public List<Pyramid> readPyramidsFromCSV(String filename) throws IOException;
-    public Pyramid createPyramid(String [] metadata) throws IOException;
+    List<Pyramid> readPyramidsFromCSV(String filename) throws IOException;
+    Pyramid createPyramid(String[] metadata, List<Pyramid> pyramids) throws IOException;
     Map siteNumberOfPyramids(List<Pyramid> pyramids);
     List<Pyramid> sortPyramidsByHeight(List<Pyramid> pyramids);
 }

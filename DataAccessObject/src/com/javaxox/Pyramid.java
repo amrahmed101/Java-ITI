@@ -11,7 +11,6 @@ public class Pyramid {
         this.pharaoh = pharaoh;
         this.site = site;
     }
-
     public Double getHeight() { return height; }
     public void setHeight(Double height) { this.height = height; }
     public String getModern_name() { return modern_name; }

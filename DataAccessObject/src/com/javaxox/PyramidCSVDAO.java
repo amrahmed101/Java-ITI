@@ -2,12 +2,13 @@ package com.javaxox;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class PyramidCSVDAO extends Thread implements PyramidDAO {
     public PyramidCSVDAO(){ }
     @Override
     public List<Pyramid> readPyramidsFromCSV(String filename) throws NullPointerException, IOException {
-        BufferedReader br= null;
+        BufferedReader br=null;
         try { br = new BufferedReader(new FileReader(filename)); } catch (FileNotFoundException e) {
             e.printStackTrace(); }
         String [] attribute;
@@ -22,9 +23,10 @@ public class PyramidCSVDAO extends Thread implements PyramidDAO {
         return pyramids; }
 
     @Override
-    public Pyramid createPyramid(String [] metadata) throws IOException {
+    public Pyramid createPyramid(String [] metadata,List <Pyramid> pyramids) throws IOException {
         Pyramid pyramid=new Pyramid(Double.valueOf(metadata[0]),metadata[1],metadata[2],metadata[3]);
-           return pyramid; }
+        pyramids.add(pyramid);
+        return pyramid; }
 
     @Override
     public Map siteNumberOfPyramids(List<Pyramid> pyramids) {
@@ -43,11 +45,14 @@ public class PyramidCSVDAO extends Thread implements PyramidDAO {
 
     @Override
     public List<Pyramid> sortPyramidsByHeight(List<Pyramid> pyramids) {
-        Collections.sort(pyramids, new Comparator<Pyramid>() {
+        /*Collections.sort(pyramids, new Comparator<Pyramid>() {
             @Override
             public int compare(Pyramid o1, Pyramid o2) {
                 return (int) (o1.getHeight() - o2.getHeight()); }});
-        return pyramids;
+        return pyramids;*/
+        List <Pyramid> sortedPyramids;
+        sortedPyramids=pyramids.stream().sorted(Comparator.comparing(Pyramid::getHeight)).collect(Collectors.toList());
+        return sortedPyramids;
     }
 }
 
