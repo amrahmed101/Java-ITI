@@ -46,13 +46,19 @@ public class CityCountryMethods {
     public List<City> sortedCitiesByCountryCode(String s) {
         return cities.stream().filter(city -> city.getCountryCode().equals(" " +s)).sorted(Comparator.comparing(City::getPopulation)).collect(Collectors.toList()); }
 
-    public List<String> HighestCityPopPerCountry(String s,int order) {
-        return cities.stream()
-                .filter(city -> city.getCountryCode().equals(" " + s))
-                .sorted(Comparator.comparing(City::getPopulation).reversed())
-                .limit(order)
-                .map(City::getName)
-                .collect(Collectors.toList()); }
+    public HashMap HighestCityPopPerCountry(int order) {
+        HashMap countryHighestCities=new HashMap();
+        for(Country c:countries){
+            countryHighestCities.put(c.getName()
+                    ,cities.stream()
+                            .filter(city -> city.getCountryCode().equals(" " + c.getCode()))
+                            .sorted(Comparator.comparing(City::getPopulation).reversed())
+                            .limit(order)
+                            .map(City::getName)
+                            .collect(Collectors.toList()));}
+
+        return countryHighestCities;
+    }
 
     public List<String> HighestCapitalPop() {
         List<City> capitals = new ArrayList<>();

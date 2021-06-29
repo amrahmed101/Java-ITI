@@ -42,20 +42,12 @@ public class Main {
         System.out.println("Maximum Population is " + maximumPopulation);
 
         //Highest City Population Per Country
-        List <String> highestCity=cityCountryMethods.HighestCityPopPerCountry("AFG",1);
-        System.out.println(highestCity);
+        HashMap highestCity=cityCountryMethods.HighestCityPopPerCountry(1);
+        System.out.println("List of countries with the highest population in each\n"+highestCity);
 
         //Highest Capital Population
         List <String> highestCapitalPop=cityCountryMethods.HighestCapitalPop();
-        System.out.println(highestCapitalPop);
-
-
-
-
-
-
-
-
+        System.out.println("Capital With Highest Population is \n"+highestCapitalPop);
     }
 }
 
