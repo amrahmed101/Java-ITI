@@ -21,7 +21,6 @@ public class Main {
         HashMap countryCities=new HashMap();
         countryCities=cityCountryMethods.countryCities();
         System.out.println(" Country:Cities\n" + countryCities);
-
         // For a given country code (from Console) sort the cities according to the population
         Scanner scanner=new Scanner(System.in);
         System.out.println("Enter Country Code");
