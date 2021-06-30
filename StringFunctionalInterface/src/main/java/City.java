@@ -7,8 +7,7 @@ public class City {
         this.id = id;
         this.name = name;
         this.population = population;
-        this.countryCode = countryCode;
-    }
+        this.countryCode = countryCode; }
 
     public int getId() {
         return id; }

@@ -22,7 +22,7 @@ public class CountryReadCSV {
                         attribute[1],
                         attribute[2],
                         Double.parseDouble(attribute[3]),
-                        (int) Float.parseFloat(attribute[4]),
+                        (int) Float.parseFloat(attribute[3]),
                         Double.parseDouble(attribute[5]),
                         Integer.parseInt(attribute[6]));
                 countries.add(country); }
