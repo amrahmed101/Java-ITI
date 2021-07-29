@@ -6,20 +6,24 @@ this application is java web Application that use spark library to work with wuz
 
 To use this application load the application and run it on application server preferred "APACHE TOMCAT"
 use intellij ide to load the project and run it.
+
+
 open localhost:8080/
 
-follow links to apply specific operation
 
-
-
+Homepage:
 
 
 *![webservice homepage](https://github.com/amrahmed93/Java-ITI/blob/main/WuzzufSparkSpring/src/main/resources/homepage.png?raw=true)
 
+
 -API Documentation
 
 
-*Load Dataset : http://localhost:8080/loadDataset
+follow links to apply specific operation
+
+
+*Load Dataset : http://localhost:8080/showDataset
 
 
 *Summary&Structure : http://localhost:8080/summaryStructure
